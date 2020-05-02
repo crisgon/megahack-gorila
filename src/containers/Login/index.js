@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import "./style.css";
 
 export function Login() {
@@ -9,15 +10,17 @@ export function Login() {
   function makeLogin(e) {
     e.preventDefault();
     console.log({ email, pass, e });
+    setEmail("");
+    setPass("");
   }
 
   return (
-    <section className="login-container" onSubmit={makeLogin}>
+    <section className="login-register-container" onSubmit={makeLogin}>
       <div>
-        <h1 className="login-text">BEM-VINDO AO GORILA!!</h1>
+        <h1 className="login-register-text">BEM-VINDO AO GORILA!!</h1>
       </div>
 
-      <form className="login-form">
+      <form className="login-register-form">
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -30,7 +33,7 @@ export function Login() {
           onChange={(e) => setPass(e.target.value)}
           className="input-default"
           placeholder="senha"
-          type="pass"
+          type="password"
         />
         <div className="form-actions">
           <Link to="/cadastro" className="button-secondary">
