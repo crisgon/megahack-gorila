@@ -1,11 +1,13 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 import { AiOutlinePlus, AiOutlineInfoCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 
 export function ProfessionalCard(props) {
   const photoUrl = `https://randomuser.me/api/portraits/${props.info.photo}.jpg`;
+
   return (
     <div className="professionalCard">
       <div
@@ -15,9 +17,9 @@ export function ProfessionalCard(props) {
         }}
       >
         <div className="professionalActions">
-          <button className="plusButton">
+          <Link className="plusButton" to="/gorila">
             <AiOutlinePlus />
-          </button>
+          </Link>
           <button className="infoButton">
             <AiOutlineInfoCircle />
           </button>

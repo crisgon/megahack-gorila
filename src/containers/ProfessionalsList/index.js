@@ -1,5 +1,6 @@
 import React from "react";
 import { ProfessionalCard } from "./ProfessionalCard";
+import { SearchInput } from "../../components/SearchInput";
 
 import "./style.css";
 
@@ -176,7 +177,13 @@ export function ProfessionalsList() {
   ];
   return (
     <section className="professionalsListContainer">
-      <header className="professionalsListHeader">Gorila</header>
+      <header className="professionalsListHeader">
+        <img src="https://gorila.com.br/assets/img/logo.svg" alt="Gorila" />
+      </header>
+
+      <div className="professionalsListFilters">
+        <SearchInput placeholder="procurando algo?" />
+      </div>
 
       <span className="resultInfo">
         {professionalsList.length} profissionais compatíveis com seu perfil

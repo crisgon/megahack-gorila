@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import "./style.css";
 
 export function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
   function makeLogin(e) {
     e.preventDefault();
     console.log({ email, pass, e });
+    if (email && pass) history.push("/lista-de-profissionais");
+
     setEmail("");
     setPass("");
   }

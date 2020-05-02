@@ -5,7 +5,12 @@
 }
 
 .professionalsListHeader {
-  height: 250px;
+  padding: 2rem 0;
+  height: 100px;
+}
+
+.professionalsListFilters {
+  margin-bottom: 50px;
 }
 
 .resultInfo {
