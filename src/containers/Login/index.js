@@ -56,9 +56,9 @@ export function Login() {
             )}
           </button>
         </div>
+        <Link to="/lista-de-profissionais">Profissionais</Link>
+        <Link to="/lista-de-clientes">Clientes</Link>
       </form>
-      <Link to="/lista-de-profissionais">Profissionais</Link>
-      <Link to="/lista-de-clientes">Clientes</Link>
     </section>
   );
 }
