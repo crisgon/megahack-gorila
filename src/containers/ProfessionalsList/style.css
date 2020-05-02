@@ -1,0 +1,23 @@
+.professionalsListContainer {
+  width: 100%;
+  max-width: 1064px;
+  margin: 0 auto;
+}
+
+.professionalsListHeader {
+  height: 250px;
+}
+
+.resultInfo {
+  font-size: 24px;
+  line-height: 28px;
+  color: #454149;
+}
+
+.listContainer {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

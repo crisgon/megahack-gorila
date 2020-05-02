@@ -1,0 +1,99 @@
+.professionalCard {
+  width: 253px;
+  height: 366px;
+  background: #ffffff;
+  box-shadow: 0px 7px 25px rgba(196, 196, 196, 0.56);
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.professionalPhoto {
+  width: 100%;
+  height: 166px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.professionalActions {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -22.5px;
+  right: 10px;
+}
+
+.plusButton,
+.infoButton {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px rgba(196, 196, 196, 0.56);
+  border: 0;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.plusButton {
+  background-color: #85edfb;
+}
+
+.infoButton {
+  background-color: #ffaa5c;
+}
+
+.professional-info {
+  padding: 0.5rem 1rem;
+}
+
+.professional-name {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  padding: 0.5rem 0;
+}
+
+.professionalRating {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #454149;
+  margin-left: 1rem;
+}
+
+.totalOfClients {
+  display: block;
+  font-weight: 300;
+  font-size: 18px;
+  color: #8c8c8c;
+  padding: 0.5rem 0;
+}
+
+.skils {
+  padding: 0.25rem 0;
+}
+
+.skils h4 {
+  font-size: 18px;
+  line-height: 21px;
+  color: #454149;
+}
+
+.skils ul {
+  padding-top: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.skils ul li {
+  padding: 0.25rem 0;
+  color: #8c8c8c;
+}
