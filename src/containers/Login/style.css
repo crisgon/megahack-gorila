@@ -74,10 +74,10 @@
 }
 
 .spin {
-  animation: span-animation 1s infinite linear;
+  animation: spin-animation 1s infinite linear;
 }
 
-@keyframes span-animation {
+@keyframes spin-animation {
   0% {
     transform: rotate(0deg);
   }
