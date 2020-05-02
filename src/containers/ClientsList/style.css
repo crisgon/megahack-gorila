@@ -1,0 +1,28 @@
+.clientsListContainer {
+  width: 100%;
+  max-width: 1064px;
+  margin: 0 auto;
+}
+
+.clientsListHeader {
+  padding: 2rem 0;
+  height: 100px;
+}
+
+.clientsListFilters {
+  margin-bottom: 50px;
+}
+
+.resultInfo {
+  font-size: 24px;
+  line-height: 28px;
+  color: #454149;
+}
+
+.listContainer {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}

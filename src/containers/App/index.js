@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import { Login } from "../Login";
 import { Register } from "../Register";
 import { ProfessionalsList } from "../ProfessionalsList";
+import { ClientsList } from "../ClientsList";
 import { GorilaPage } from "../GorilaPage";
 
 import "./style.css";
@@ -19,6 +19,7 @@ export function App() {
       <Router>
         <Switch>
           <Route path="/gorila" component={GorilaPage} />
+          <Route path="/lista-de-clientes" component={ClientsList} />
           <Route path="/lista-de-profissionais" component={ProfessionalsList} />
           <Route path="/cadastro" component={Register} />
           <Route path="/" component={Login} />
