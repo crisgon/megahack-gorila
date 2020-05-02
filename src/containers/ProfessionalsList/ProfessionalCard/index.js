@@ -1,12 +1,32 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 import { AiOutlinePlus, AiOutlineInfoCircle } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
+import { useHistory } from "react-router-dom";
 
 import "./style.css";
 
 export function ProfessionalCard(props) {
+  const history = useHistory();
   const photoUrl = `https://randomuser.me/api/portraits/${props.info.photo}.jpg`;
+
+  const choiceProfessional = () =>
+    confirmAlert({
+      title: "Confirmar?",
+      message: `Você deseja confirmar a escolha de ${
+        props.info.name
+      }, com especialidade em ${props.info.skils.map((s) => s).join(", ")}`,
+      buttons: [
+        {
+          label: "Sim",
+          onClick: () => history.push("/gorila"),
+        },
+        {
+          label: "Não",
+        },
+      ],
+    });
 
   return (
     <div className="professionalCard">
@@ -17,9 +37,9 @@ export function ProfessionalCard(props) {
         }}
       >
         <div className="professionalActions">
-          <Link className="plusButton" to="/gorila">
+          <button className="plusButton" onClick={choiceProfessional}>
             <AiOutlinePlus />
-          </Link>
+          </button>
           <button className="infoButton">
             <AiOutlineInfoCircle />
           </button>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import "./style.css";
 
@@ -7,14 +8,19 @@ export function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  function makeLogin(e) {
+  async function makeLogin(e) {
+    setLoading(true);
     e.preventDefault();
-    console.log({ email, pass, e });
-    if (email && pass) history.push("/lista-de-profissionais");
-
-    setEmail("");
-    setPass("");
+    if (email && pass) {
+      setTimeout(() => {
+        setLoading(false);
+        history.push("/lista-de-profissionais");
+        setEmail("");
+        setPass("");
+      }, 2000);
+    }
   }
 
   return (
@@ -43,7 +49,11 @@ export function Login() {
             Cadastre-se
           </Link>
           <button type="submit" className="button-default">
-            Entrar
+            {loading ? (
+              <AiOutlineLoading3Quarters className="spin" />
+            ) : (
+              "Entrar"
+            )}
           </button>
         </div>
       </form>

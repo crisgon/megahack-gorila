@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { ProfessionalCard } from "./ProfessionalCard";
 import { SearchInput } from "../../components/SearchInput";
 
@@ -178,7 +180,9 @@ export function ProfessionalsList() {
   return (
     <section className="professionalsListContainer">
       <header className="professionalsListHeader">
-        <img src="https://gorila.com.br/assets/img/logo.svg" alt="Gorila" />
+        <Link to="/">
+          <img src="https://gorila.com.br/assets/img/logo.svg" alt="Gorila" />
+        </Link>
       </header>
 
       <div className="professionalsListFilters">
