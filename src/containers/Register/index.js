@@ -20,7 +20,7 @@ export function Register() {
       `http://wmonitor.tk:50124/cliente/create?nome=${name}&idade=${age}&sexo=${gender}&localidade=''&telefone=${phone}&email=${email}&path_image='&perfil=''`
     );
 
-    history.push("/definicao-de-perfil");
+    history.push("/megahack-gorila/definicao-de-perfil");
     setName("");
     setEmail("");
     setAge("");

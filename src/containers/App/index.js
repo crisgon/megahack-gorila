@@ -20,10 +20,19 @@ export function App() {
       <Router>
         <Switch>
           <Route path="/gorila" component={GorilaPage} />
-          <Route path="/lista-de-clientes" component={ClientsList} />
-          <Route path="/lista-de-profissionais" component={ProfessionalsList} />
-          <Route path="/definicao-de-perfil" component={ProfileForm} />
-          <Route path="/cadastro" component={Register} />
+          <Route
+            path="/megahack-gorila/lista-de-clientes"
+            component={ClientsList}
+          />
+          <Route
+            path="/megahack-gorila/lista-de-profissionais"
+            component={ProfessionalsList}
+          />
+          <Route
+            path="/megahack-gorila/definicao-de-perfil"
+            component={ProfileForm}
+          />
+          <Route path="/megahack-gorila/cadastro" component={Register} />
           <Route path="/" component={Login} />
         </Switch>
       </Router>

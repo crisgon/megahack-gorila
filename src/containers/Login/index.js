@@ -15,7 +15,7 @@ export function Login() {
     if (email) {
       setTimeout(() => {
         setLoading(false);
-        history.push("/definicao-de-perfil");
+        history.push("/megahack-gorila/definicao-de-perfil");
         setEmail("");
       }, 2000);
     }
@@ -36,7 +36,7 @@ export function Login() {
           type="email"
         />
         <div className="form-actions">
-          <Link to="/cadastro" className="button-secondary">
+          <Link to="/megahack-gorila/cadastro" className="button-secondary">
             Cadastre-se
           </Link>
           <button type="submit" className="button-default">
