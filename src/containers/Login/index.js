@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./style.css";
 
@@ -13,11 +16,17 @@ export function Login() {
     setLoading(true);
     e.preventDefault();
     if (email) {
-      setTimeout(() => {
+      try {
+        const res = await axios.post(
+          `http://wmonitor.tk:50124/cliente/${email}`
+        );
         setLoading(false);
         history.push("/megahack-gorila/definicao-de-perfil");
         setEmail("");
-      }, 2000);
+        localStorage.setItem("gorilaEmail", res.data.result._id.$oid);
+      } catch (error) {
+        toast.error("Ops, ocorreu um erro ao tentar fazer o login.");
+      }
     }
   }
 

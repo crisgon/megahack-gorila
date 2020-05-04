@@ -7,7 +7,8 @@ import "./style.css";
 export function ProfileForm() {
   const history = useHistory();
 
-  const userId = "5eae635b512f03495711d905";
+  const userId = localStorage.getItem("gorilaEmail");
+
   const [q1, setQ1] = useState("a");
   const [q2, setQ2] = useState("a");
   const [q3, setQ3] = useState("a");

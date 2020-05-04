@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import StarRatings from "react-star-ratings";
 import { AiOutlinePlus, AiOutlineInfoCircle } from "react-icons/ai";
 import { confirmAlert } from "react-confirm-alert";
@@ -6,8 +7,10 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import { useHistory } from "react-router-dom";
 
 import "./style.css";
+import { toast } from "react-toastify";
 
 export function ProfessionalCard(props) {
+  const userId = localStorage.getItem("gorilaEmail");
   const history = useHistory();
   const photoUrl = `https://randomuser.me/api/portraits/${props.info.photo}.jpg`;
 
@@ -20,7 +23,24 @@ export function ProfessionalCard(props) {
       buttons: [
         {
           label: "Sim",
-          onClick: () => history.push("/gorila"),
+          onClick: () => {
+            console.log(
+              `http://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
+            );
+            axios
+              .post(
+                `http://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
+              )
+              .then((res) => {
+                toast.success("Profissional vinculado com sucesso!");
+                history.push("/gorila");
+              })
+              .catch(() =>
+                toast.error(
+                  "Ops, ocorreu um problema ao tentar carregar a lista de profissionais."
+                )
+              );
+          },
         },
         {
           label: "Não",

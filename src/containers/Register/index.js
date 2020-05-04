@@ -13,7 +13,7 @@ export function Register() {
   const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
 
-  async function makeLogin(e) {
+  async function makeRegister(e) {
     e.preventDefault();
 
     await axios.post(
@@ -28,7 +28,7 @@ export function Register() {
   }
 
   return (
-    <section className="login-register-container" onSubmit={makeLogin}>
+    <section className="login-register-container" onSubmit={makeRegister}>
       <div>
         <h1 className="login-register-text">COMECE A INVESTIR JÁ!</h1>
       </div>
