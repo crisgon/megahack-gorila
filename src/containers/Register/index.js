@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 
 import "./style.css";
 
 export function Register() {
+  const history = useHistory();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
+  const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
-  const [pass, setPass] = useState("");
 
-  function makeLogin(e) {
+  async function makeLogin(e) {
     e.preventDefault();
-    console.log({ name, email, age, gender, pass });
+
+    await axios.post(
+      `http://wmonitor.tk:50124/cliente/create?nome=${name}&idade=${age}&sexo=${gender}&localidade=''&telefone=${phone}&email=${email}&path_image='&perfil=''`
+    );
+
+    history.push("/definicao-de-perfil");
     setName("");
     setEmail("");
     setAge("");
     setGender("");
-    setPass("");
   }
 
   return (
@@ -39,7 +46,7 @@ export function Register() {
           onChange={(e) => setEmail(e.target.value)}
           className="input-default"
           placeholder="email"
-          type="email"
+          type="text"
         />
         <div className="form-age-gender-container">
           <input
@@ -59,11 +66,11 @@ export function Register() {
           />
         </div>
         <input
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           className="input-default"
-          placeholder="senha"
-          type="password"
+          placeholder="telefone"
+          type="text"
         />
         <div className="form-actions">
           <Link to="/" className="button-secondary">

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 import { ProfessionalCard } from "./ProfessionalCard";
@@ -7,6 +8,9 @@ import { SearchInput } from "../../components/SearchInput";
 import "./style.css";
 
 export function ProfessionalsList() {
+  useEffect(() => {
+    axios.post("http://wmonitor.tk:50124/profissionais");
+  }, []);
   const professionalsList = [
     {
       name: "Bernard Robinson",

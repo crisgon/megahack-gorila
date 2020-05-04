@@ -7,18 +7,16 @@ import "./style.css";
 export function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function makeLogin(e) {
     setLoading(true);
     e.preventDefault();
-    if (email && pass) {
+    if (email) {
       setTimeout(() => {
         setLoading(false);
         history.push("/definicao-de-perfil");
         setEmail("");
-        setPass("");
       }, 2000);
     }
   }
@@ -37,13 +35,6 @@ export function Login() {
           placeholder="email"
           type="email"
         />
-        <input
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
-          className="input-default"
-          placeholder="senha"
-          type="password"
-        />
         <div className="form-actions">
           <Link to="/cadastro" className="button-secondary">
             Cadastre-se
@@ -56,8 +47,6 @@ export function Login() {
             )}
           </button>
         </div>
-        <Link to="/lista-de-profissionais">Profissionais</Link>
-        <Link to="/lista-de-clientes">Clientes</Link>
       </form>
     </section>
   );

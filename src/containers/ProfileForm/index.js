@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 
 import "./style.css";
@@ -6,6 +7,7 @@ import "./style.css";
 export function ProfileForm() {
   const history = useHistory();
 
+  const userId = "5eae635b512f03495711d905";
   const [q1, setQ1] = useState("a");
   const [q2, setQ2] = useState("a");
   const [q3, setQ3] = useState("a");
@@ -15,9 +17,11 @@ export function ProfileForm() {
   const [q7, setQ7] = useState("a");
   const [q8, setQ8] = useState("a");
 
-  function sendForm(e) {
+  async function sendForm(e) {
     e.preventDefault();
-    console.log({ q1, q2, q3, q4, q5, q6, q7, q8 });
+    await axios.post(
+      `http://wmonitor.tk:50123/?&q=${q1}&q=${q2}&q=${q3}&q=${q4}&q=${q5}&q=${q6}&q=${q7}&q=${q8}&id=${userId}`
+    );
     history.push("/lista-de-profissionais");
   }
 
