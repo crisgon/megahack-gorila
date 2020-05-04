@@ -19,7 +19,7 @@ export function ProfessionalsList() {
   const getProfissionais = async () => {
     await axios
       .post(
-        "http://wmonitor.tk:50124/cliente/mentores/5eb00eda060b8c51c02e7162"
+        "https://wmonitor.tk:50124/cliente/mentores/5eb00eda060b8c51c02e7162"
       )
       .then((res) => {
         setList(

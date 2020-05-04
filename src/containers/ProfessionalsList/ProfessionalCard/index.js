@@ -25,11 +25,11 @@ export function ProfessionalCard(props) {
           label: "Sim",
           onClick: () => {
             console.log(
-              `http://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
+              `https://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
             );
             axios
               .post(
-                `http://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
+                `https://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
               )
               .then((res) => {
                 toast.success("Profissional vinculado com sucesso!");

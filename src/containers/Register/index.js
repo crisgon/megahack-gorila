@@ -17,7 +17,7 @@ export function Register() {
     e.preventDefault();
 
     await axios.post(
-      `http://wmonitor.tk:50124/cliente/create?nome=${name}&idade=${age}&sexo=${gender}&localidade=''&telefone=${phone}&email=${email}&path_image='&perfil=''`
+      `https://wmonitor.tk:50124/cliente/create?nome=${name}&idade=${age}&sexo=${gender}&localidade=''&telefone=${phone}&email=${email}&path_image='&perfil=''`
     );
 
     history.push("/megahack-gorila/definicao-de-perfil");
