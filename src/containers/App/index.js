@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { Login } from "../Login";
 import { Register } from "../Register";
 import { ProfessionalsList } from "../ProfessionalsList";
+import { ProfileForm } from "../ProfileForm";
 import { ClientsList } from "../ClientsList";
 import { GorilaPage } from "../GorilaPage";
 
@@ -21,6 +22,7 @@ export function App() {
           <Route path="/gorila" component={GorilaPage} />
           <Route path="/lista-de-clientes" component={ClientsList} />
           <Route path="/lista-de-profissionais" component={ProfessionalsList} />
+          <Route path="/definicao-de-perfil" component={ProfileForm} />
           <Route path="/cadastro" component={Register} />
           <Route path="/" component={Login} />
         </Switch>

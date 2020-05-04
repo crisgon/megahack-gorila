@@ -1,0 +1,32 @@
+@import "../Login/style.css";
+
+.profileForm {
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.profileForm h1 {
+  padding: 1rem 0.5rem;
+}
+
+.profileForm p {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+.profileForm p label {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.profileForm p label input {
+  margin-right: 0.5rem;
+}

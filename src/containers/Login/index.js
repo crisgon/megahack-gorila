@@ -16,7 +16,7 @@ export function Login() {
     if (email && pass) {
       setTimeout(() => {
         setLoading(false);
-        history.push("/lista-de-profissionais");
+        history.push("/definicao-de-perfil");
         setEmail("");
         setPass("");
       }, 2000);
