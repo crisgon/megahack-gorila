@@ -25,6 +25,10 @@
   align-items: center;
   font-weight: normal;
   font-size: 1rem;
+  cursor: pointer;
+}
+.profileForm p label:hover {
+  font-weight: bold;
 }
 
 .profileForm p label input {

@@ -1,0 +1,33 @@
+.pendentsRequests {
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.pendentsRequests ul li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.pendentsRequests h1 {
+  padding: 1rem 0;
+}
+
+.acept,
+.reject {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.acept {
+  color: green;
+}
+
+.reject {
+  color: red;
+}

@@ -9,6 +9,8 @@ import { ProfessionalsList } from "../ProfessionalsList";
 import { ProfileForm } from "../ProfileForm";
 import { ClientsList } from "../ClientsList";
 import { GorilaPage } from "../GorilaPage";
+import { PendentsRequests } from "../PendentsRequests";
+import { Choice } from "../Choice";
 
 import "./style.css";
 
@@ -21,6 +23,11 @@ export function App() {
       <Router>
         <Switch>
           <Route path="/gorila" component={GorilaPage} />
+          <Route path="/megahack-gorila/escolha" component={Choice} />
+          <Route
+            path="/megahack-gorila/requisicoes-pendentes"
+            component={PendentsRequests}
+          />
           <Route
             path="/megahack-gorila/lista-de-clientes"
             component={ClientsList}

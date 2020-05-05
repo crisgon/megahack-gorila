@@ -1,99 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 import { ClientCard } from "./ClientCard";
-import { SearchInput } from "../../components/SearchInput";
 
 import "./style.css";
 
 export function ClientsList() {
-  const clientList = [
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa", "Renda variável", " Moedas"],
-    },
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa", "Renda variável", " Moedas"],
-    },
-    {
-      name: "Derek Hicks",
-      type: "Moderado",
-      preferences: ["Renda Fixa", " Moedas"],
-    },
+  const getClients = () => {
+    axios.post("http://wmonitor.tk:50124/clients").then((res) => {
+      setClientList(
+        res.data.result.map((c) => {
+          return {
+            id: c.id,
+            name: c.nome,
+            type: c.perfil_investimento,
+            telefone: c.telefone,
+            email: c.email,
+          };
+        })
+      );
+    });
+  };
 
-    {
-      name: "Ana Dias",
-      type: "Moderado",
-      preferences: [" Moedas"],
-    },
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa", "Renda variável", " Moedas"],
-    },
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa"],
-    },
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa", "Renda variável", " Moedas"],
-    },
-    {
-      name: "Derek Hicks",
-      type: "Moderado",
-      preferences: ["Renda Fixa", " Moedas"],
-    },
+  useEffect(() => {
+    getClients();
+  }, []);
 
-    {
-      name: "Ana Dias",
-      type: "Moderado",
-      preferences: [" Moedas"],
-    },
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa", "Renda variável", " Moedas"],
-    },
+  const [clientList, setClientList] = useState([]);
 
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa", "Renda variável", " Moedas"],
-    },
-    {
-      name: "Derek Hicks",
-      type: "Moderado",
-      preferences: ["Renda Fixa", " Moedas"],
-    },
-
-    {
-      name: "Ana Dias",
-      type: "Moderado",
-      preferences: [" Moedas"],
-    },
-    {
-      name: "Beatrice Coleman",
-      type: "Moderado",
-      preferences: ["Renda Fixa", "Renda variável", " Moedas"],
-    },
-    {
-      name: "Derek Hicks",
-      type: "Moderado",
-      preferences: ["Renda Fixa", " Moedas"],
-    },
-
-    {
-      name: "Ana Dias",
-      type: "Moderado",
-      preferences: [" Moedas"],
-    },
-  ];
   return (
     <section className="clientsListContainer">
       <header className="clientsListHeader">
@@ -102,17 +37,15 @@ export function ClientsList() {
         </Link>
       </header>
 
-      <div className="clientsListFilters">
-        <SearchInput placeholder="procurando algo?" />
-      </div>
+      <h1>Clientes</h1>
 
       <span className="resultInfo">
-        {clientList.length} clientes compatíveis com sua busca
+        {clientList.length} clientes compatíveis com seu perfil
       </span>
 
       <div className="listContainer">
         {clientList.map((p) => (
-          <ClientCard info={p} />
+          <ClientCard key={p.id} info={p} />
         ))}
       </div>
     </section>

@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+.clientsListContainer h1 {
+  padding: 1rem 0;
+}
+
 .clientsListHeader {
   padding: 2rem 0;
   height: 100px;

@@ -16,19 +16,19 @@ export function Login() {
     setLoading(true);
     e.preventDefault();
     if (email) {
-      try {
-        const res = await axios.post(
-          `https://wmonitor.tk:50124/cliente/${email}`
-        );
-
-        history.push("/megahack-gorila/definicao-de-perfil");
-        setEmail("");
-        localStorage.setItem("gorilaEmail", res.data.result._id.$oid);
-      } catch (error) {
-        toast.error("Ops, ocorreu um erro ao tentar fazer o login.");
-      } finally {
-        setLoading(false);
-      }
+      axios
+        .post(`http://wmonitor.tk:50124/cliente/${email}`)
+        .then((res) => {
+          history.push("/megahack-gorila/escolha");
+          setEmail("");
+          localStorage.setItem("gorilaEmail", res.data.result._id.$oid);
+        })
+        .catch(() => {
+          toast.error("Ops, ocorreu um erro ao tentar fazer o login.");
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
   }
 

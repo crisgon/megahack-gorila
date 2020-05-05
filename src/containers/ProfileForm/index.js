@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 
 import "./style.css";
+import { toast } from "react-toastify";
 
 export function ProfileForm() {
   const history = useHistory();
@@ -20,9 +21,11 @@ export function ProfileForm() {
 
   async function sendForm(e) {
     e.preventDefault();
-    await axios.post(
-      `https://wmonitor.tk:50123/?&q=${q1}&q=${q2}&q=${q3}&q=${q4}&q=${q5}&q=${q6}&q=${q7}&q=${q8}&id=${userId}`
-    );
+    await axios
+      .post(
+        `http://wmonitor.tk:50123/?&q=${q1}&q=${q2}&q=${q3}&q=${q4}&q=${q5}&q=${q6}&q=${q7}&q=${q8}&id=${userId}`
+      )
+      .then((res) => toast.info(`Seu perfil é: ${res.data.Perfil}`));
     history.push("/megahack-gorila/lista-de-profissionais");
   }
 

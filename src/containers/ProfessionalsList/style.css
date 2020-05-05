@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+.professionalsListContainer h1 {
+  padding: 1rem 0;
+}
+
 .professionalsListHeader {
   padding: 2rem 0;
   height: 100px;

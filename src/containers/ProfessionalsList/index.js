@@ -1,34 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { ProfessionalCard } from "./ProfessionalCard";
-import { SearchInput } from "../../components/SearchInput";
 
 import "./style.css";
 
 export function ProfessionalsList() {
+  const userId = localStorage.getItem("gorilaEmail");
   const [list, setList] = useState([]);
 
-  useEffect(() => {
-    getProfissionais();
-  }, []);
-
-  const getProfissionais = async () => {
+  const getProfissionais = useCallback(async () => {
     await axios
-      .post(
-        "https://wmonitor.tk:50124/cliente/mentores/5eb00eda060b8c51c02e7162"
-      )
+      .post(`http://wmonitor.tk:50124/cliente/mentores/${userId}`)
       .then((res) => {
         setList(
-          res.data.result[0].perfil_compativel.map((i) => {
+          res.data.result[0].perfil_compativel.map((i, index) => {
             return {
               id: i._id,
               name: i.nome,
-              rating: 5,
-              totalOfClients: 1291,
+              rating: Math.round(5 * Math.random()),
+              totalOfClients: Math.round(index + 1 * Math.random()),
               photo: "men/21",
               skils: [i.especialidade],
             };
@@ -40,7 +34,11 @@ export function ProfessionalsList() {
           "Ops, ocorreu um problema ao tentar carregar a lista de profissionais."
         )
       );
-  };
+  }, [userId]);
+
+  useEffect(() => {
+    getProfissionais();
+  }, [getProfissionais]);
 
   return (
     <section className="professionalsListContainer">
@@ -50,9 +48,7 @@ export function ProfessionalsList() {
         </Link>
       </header>
 
-      <div className="professionalsListFilters">
-        <SearchInput placeholder="procurando algo?" />
-      </div>
+      <h1>Profissionais</h1>
 
       <span className="resultInfo">
         {list.length} profissionais compatíveis com seu perfil

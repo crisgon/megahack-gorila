@@ -17,10 +17,14 @@ export function Register() {
     e.preventDefault();
 
     await axios.post(
-      `https://wmonitor.tk:50124/cliente/create?nome=${name}&idade=${age}&sexo=${gender}&localidade=''&telefone=${phone}&email=${email}&path_image='&perfil=''`
+      `http://wmonitor.tk:50124/cliente/create?nome=${name}&idade=${age}&sexo=${gender}&localidade=''&telefone=${phone}&email=${email}&path_image='&perfil=''`
     );
 
-    history.push("/megahack-gorila/definicao-de-perfil");
+    const res = await axios.post(`http://wmonitor.tk:50124/cliente/${email}`);
+
+    localStorage.setItem("gorilaEmail", res.data.result._id.$oid);
+
+    history.push("/megahack-gorila/escolha");
     setName("");
     setEmail("");
     setAge("");

@@ -14,6 +14,7 @@ export function ProfessionalCard(props) {
   const history = useHistory();
   const photoUrl = `https://randomuser.me/api/portraits/${props.info.photo}.jpg`;
 
+  console.log(props.info);
   const choiceProfessional = () =>
     confirmAlert({
       title: "Confirmar?",
@@ -24,15 +25,14 @@ export function ProfessionalCard(props) {
         {
           label: "Sim",
           onClick: () => {
-            console.log(
-              `https://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
-            );
+            const profId = props.info.id;
             axios
               .post(
-                `https://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${props.info.id.$oid}`
+                `http://wmonitor.tk:50124/cliente/${userId}/adicionar/profissional/${profId}`
               )
               .then((res) => {
                 toast.success("Profissional vinculado com sucesso!");
+                localStorage.setItem("profissionalVinculadoId", profId);
                 history.push("/gorila");
               })
               .catch(() =>
