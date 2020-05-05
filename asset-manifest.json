@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/megahack-gorila/static/css/main.bfefd8fb.chunk.css",
-    "main.js": "/megahack-gorila/static/js/main.53611898.chunk.js",
-    "main.js.map": "/megahack-gorila/static/js/main.53611898.chunk.js.map",
+    "main.css": "/megahack-gorila/static/css/main.171033ff.chunk.css",
+    "main.js": "/megahack-gorila/static/js/main.0b3cc556.chunk.js",
+    "main.js.map": "/megahack-gorila/static/js/main.0b3cc556.chunk.js.map",
     "runtime-main.js": "/megahack-gorila/static/js/runtime-main.97e40bed.js",
     "runtime-main.js.map": "/megahack-gorila/static/js/runtime-main.97e40bed.js.map",
-    "static/css/2.a36ba50f.chunk.css": "/megahack-gorila/static/css/2.a36ba50f.chunk.css",
-    "static/js/2.45ae67d3.chunk.js": "/megahack-gorila/static/js/2.45ae67d3.chunk.js",
-    "static/js/2.45ae67d3.chunk.js.map": "/megahack-gorila/static/js/2.45ae67d3.chunk.js.map",
+    "static/css/2.70206b74.chunk.css": "/megahack-gorila/static/css/2.70206b74.chunk.css",
+    "static/js/2.a5ce0501.chunk.js": "/megahack-gorila/static/js/2.a5ce0501.chunk.js",
+    "static/js/2.a5ce0501.chunk.js.map": "/megahack-gorila/static/js/2.a5ce0501.chunk.js.map",
     "index.html": "/megahack-gorila/index.html",
-    "precache-manifest.ccdaabb5f800ba010155e5b0d1c4cee3.js": "/megahack-gorila/precache-manifest.ccdaabb5f800ba010155e5b0d1c4cee3.js",
+    "precache-manifest.4a0cb5b99fbccd89e8e73552d95fe25e.js": "/megahack-gorila/precache-manifest.4a0cb5b99fbccd89e8e73552d95fe25e.js",
     "service-worker.js": "/megahack-gorila/service-worker.js",
-    "static/css/2.a36ba50f.chunk.css.map": "/megahack-gorila/static/css/2.a36ba50f.chunk.css.map",
-    "static/css/main.bfefd8fb.chunk.css.map": "/megahack-gorila/static/css/main.bfefd8fb.chunk.css.map",
-    "static/js/2.45ae67d3.chunk.js.LICENSE.txt": "/megahack-gorila/static/js/2.45ae67d3.chunk.js.LICENSE.txt"
+    "static/css/2.70206b74.chunk.css.map": "/megahack-gorila/static/css/2.70206b74.chunk.css.map",
+    "static/css/main.171033ff.chunk.css.map": "/megahack-gorila/static/css/main.171033ff.chunk.css.map",
+    "static/js/2.a5ce0501.chunk.js.LICENSE.txt": "/megahack-gorila/static/js/2.a5ce0501.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.97e40bed.js",
-    "static/css/2.a36ba50f.chunk.css",
-    "static/js/2.45ae67d3.chunk.js",
-    "static/css/main.bfefd8fb.chunk.css",
-    "static/js/main.53611898.chunk.js"
+    "static/css/2.70206b74.chunk.css",
+    "static/js/2.a5ce0501.chunk.js",
+    "static/css/main.171033ff.chunk.css",
+    "static/js/main.0b3cc556.chunk.js"
   ]
 }
